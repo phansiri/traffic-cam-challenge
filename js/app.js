@@ -44,7 +44,7 @@ $(document).ready(function() {
     map.setOptions({styles: styles});
 
     // AOS - Custom Marker Image
-    var image = 'https://cdn1.iconfinder.com/data/icons/google_jfk_icons_by_carlosjj/32/search_pointer.png';
+    var image = 'https://cdn3.iconfinder.com/data/icons/wpzoom-developer-icon-set/500/41-24.png';
 
     var infoWindow = new google.maps.InfoWindow();
 
