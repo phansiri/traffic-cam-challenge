@@ -13,3 +13,7 @@ body, input {
 input {
     width: 100%;
 }
+
+#search {
+    border-radius: 12px;
+}
