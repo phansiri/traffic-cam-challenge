@@ -38,6 +38,9 @@ $(document).ready(function() {
 
     var map = new google.maps.Map(mapElem, mapOption);
 
+    var trafficLayer = new google.maps.TrafficLayer();
+    trafficLayer.setMap(map);
+
     map.setOptions({styles: styles});
 
     // AOS - Custom Marker Image
