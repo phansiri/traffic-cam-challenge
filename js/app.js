@@ -1,6 +1,8 @@
 // List of Seattle Traffic Cameras
 // http://data.seattle.gov/resource/65fc-btcc.json
 
+// Advanced Optional Steps (AOS)
+
 "use strict";
 
 $(document).ready(function() {
@@ -20,6 +22,9 @@ $(document).ready(function() {
 
     var map = new google.maps.Map(mapElem, mapOption);
 
+    // AOS - Custom Marker Image
+    var image = 'https://cdn1.iconfinder.com/data/icons/google_jfk_icons_by_carlosjj/32/search_pointer.png';
+
     var infoWindow = new google.maps.InfoWindow();
 
     $.getJSON('http://data.seattle.gov/resource/65fc-btcc.json')
@@ -31,6 +36,8 @@ $(document).ready(function() {
                         lng: Number(camera.location.longitude)
                     },
                     map: map,
+                    // AOS - Custom Marker Image
+                    icon: image,
                     animation: google.maps.Animation.DROP
                 })
 
@@ -56,6 +63,11 @@ $(document).ready(function() {
                     }
                 });
 
+                // AOS - Close InfoWindow
+                google.maps.event.addListener(map, 'click', function() {
+                   infoWindow.close();
+                });
+
             });
         })
         .fail(function(error) {
@@ -64,6 +76,13 @@ $(document).ready(function() {
         .always(function() {
 
         });
+
+    // AOS - Resize
+    $(window).resize(function() {
+        var position = $('#map').position();
+        $('#map').height($(window).height() - position.top - 20);
+
+    });
 
 
 
