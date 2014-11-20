@@ -32,12 +32,6 @@ $(document).ready(function() {
                 { lightness: 100 },
                 { visibility: "simplified" }
             ]
-        },{
-            featureType: "road",
-            elementType: "labels",
-            stylers: [
-                { visibility: "off" }
-            ]
         }
     ];
 
