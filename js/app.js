@@ -16,14 +16,23 @@ $(document).ready(function() {
 
     var mapOption = {
         center: center,
-        zoom: 14
+        zoom: 14,
+        zoomControl: true,
+        zoomControlOptions: {
+            style: google.maps.ZoomControlStyle.SMALL,
+            position: google.maps.ControlPosition.LEFT_TOP
+        },
+        mapTypeControl: true,
+        mapTypeControlOptions: {
+            style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR
+        }
     };
 
     var styles = [
         {
             stylers: [
                 { hue: "#00ffe6" },
-                { saturation: -20 }
+                { saturation: -30 }
             ]
         },{
             featureType: "road",
